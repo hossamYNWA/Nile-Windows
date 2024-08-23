@@ -1,0 +1,78 @@
+.title{
+    width: 100%;
+    text-align: left;
+    margin-bottom:15px;
+}
+
+.mainTitle {
+    font-weight:400;
+    cursor:pointer;
+    margin-top:10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.mainTitle:hover, .tabBodyleft:hover .mainTitle {
+    color: var(--red-color);
+    font-weight:500;
+} 
+.tabBody{
+    width:100vw;
+    min-height:300px;
+    position: absolute;
+    left: 0;
+    transition:all 0.3s ease-in-out;
+    padding-top:25px;
+    background-color:white;
+    z-index:999
+}
+.tabBodyrt{
+    width: 100%;
+}
+
+.tabBodylt {
+    width: 500px;
+    min-height: 200px;
+    border-left: 2px solid #e1e1e1;
+    padding-left: 20px;
+}
+.cardsContainer{
+    width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 175px;
+    width: 100px;
+    
+    overflow: hidden;
+}
+
+.card:hover img{
+    transform:scale(1.1);
+}
+
+.card img {
+    height: 60%;
+    object-fit:contain;
+        transition:0.3s;
+
+}
+
+.mainContent {
+    
+}
+
+.accessoriesList {
+    list-style: none;
+    text-align: left;
+}
+
+.accessoriesList li a {
+    margin: 5px auto;
+    display: inline-block;
+    text-transform: capitalize;
+    text-decoration: none;
+    color:var(--primary-color)
+}

@@ -1,0 +1,27 @@
+header {
+    text-align:center;
+    background-color:var(--secondary-color);
+    height: 90px;
+}
+
+.login a {
+    display: inline-block;
+    margin: 10px;
+}
+
+.login svg{
+    font-size: 2.2rem;
+      /* color: var(--primary-color); */
+      color: var(--light-blue);
+}
+
+.logo {
+    overflow: hidden;
+    width: 200px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    object-fit:contain;
+}

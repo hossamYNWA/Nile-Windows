@@ -1,0 +1,24 @@
+.descList {
+    list-style-type: disclosure-closed;
+      padding: 10px 25px;
+      list-style-position: inside;
+    color: var(--primary-color);
+}
+
+.descList li {
+    font-size:0.8rem;
+    margin-bottom: 5px;
+}
+
+.qty {
+    font-size: 22px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.qtyContainer {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+    color: var(--primary-color)
+}
