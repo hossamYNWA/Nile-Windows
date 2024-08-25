@@ -263,18 +263,12 @@ function clearData (state) {
 
 // filter the options based on the previous selected option
 function filterOptions (state, action) {
-  console.log('in filter option')
   const { selectedId, index } = action.payload
-  console.log('target INDEX is: ' + index)
   const targetCategory = state[index].title
-  console.log('target category is: ' + targetCategory)
-  for (let i = index + 1; i < state.length; i++) {
+    for (let i = index + 1; i < state.length; i++) {
     state[i].options.forEach(opt => {
       if (opt[targetCategory]) {
-        console.log('target option is: ' + opt[targetCategory]._id)
-        console.log('selected id  is: ' + selectedId)
         if (opt[targetCategory]._id === selectedId) {
-          console.log('found a match: ' + opt[targetCategory]._id)
           opt.show = true
         } else {
           opt.show = false

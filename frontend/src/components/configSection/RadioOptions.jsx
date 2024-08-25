@@ -2,9 +2,16 @@ import { memo,useCallback } from "react";
 import ConfigHead from "./ConfigHead.jsx";
 import { addWinConfig } from "../store/WinConfigs";
 import { useDispatch } from "react-redux";
+
+// to convert into camel case 
+function camelize(str) {
+    return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+      return index === 0 ? word.toLowerCase() : word.toUpperCase();
+    }).replace(/\s+/g, '');
+  }
 const RadioOptions = memo(({ id, title, options }) => {
     const dispatch = useDispatch();
-    const titleSentToStore = title.toLowerCase().replace(" ", "_");
+    const titleSentToStore = camelize(title)
     const handleChange = useCallback((event) => {
         dispatch(
             addWinConfig.addRadioConfig({

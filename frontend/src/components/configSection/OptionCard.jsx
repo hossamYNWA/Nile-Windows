@@ -10,29 +10,30 @@ import { winSelectActions } from '../store/WinConfigOptions'
 import { addWinConfig } from '../store/WinConfigs'
 import { useCallback, memo } from 'react'
 const OptionCard = memo(({ option, index }) => {
+    // declaring option name
+    let optName = option.name
+    if (!optName && option.type) {
+      if (option.type.length === 1) {
+        optName = option.type[0]
+      } else {
+        optName = option.type
+      }
+    } else if (option.title) {
+      optName = option.title
+    } else if (option.brandname) {
+      optName = option.brandname
+    }
   // const [selected,setSelect] = useState(false)
   const dispatch = useDispatch()
   const selectHandler = useCallback(() => {
     console.log('selected:  ' + JSON.stringify(option))
     const filterPayload = { selectedId:option._id, index }
-    const payload = { option: option.name, index: index, id: option._id }
+    const payload = { option: optName, index: index, id: option._id }
     dispatch(winSelectActions.selectOption(payload))
     dispatch(addWinConfig.addConfig(payload))
     dispatch(winSelectActions.filterOptions(filterPayload))
   }, [option, index])
-  // declaring option name
-  let optName = option.name
-  if (!optName && option.type) {
-    if (option.type.length === 1) {
-      optName = option.type[0]
-    } else {
-      optName = option.type
-    }
-  } else if (option.title) {
-    optName = option.title
-  } else if (option.brandname) {
-    optName = option.brandname
-  }
+
   return (
     <Card
       sx={{

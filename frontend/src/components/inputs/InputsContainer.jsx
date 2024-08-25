@@ -72,7 +72,7 @@ export async function loginAction({ request, params }) {
   });
 
   if (res.status === 200) {
-    console.log(JSON.stringify(res));
+    console.log(JSON.stringify('login respose' + res));
   }
   return redirect("/winconfig");
 }

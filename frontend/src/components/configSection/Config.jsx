@@ -68,6 +68,7 @@ const Config = () => {
                 <ConfigContainer
                     title={item.title}
                     options={item.options}
+                    optionsLength = {item.options.length}
                     key={i}
                     index={i}
                 />
