@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import { Form, redirect, useActionData, json } from "react-router-dom";
 import CustomToast from "./CustomToast";
 import errorFinder from "../Validator.js";
+import { useDispatch } from "react-redux";
 import { memo } from "react";
 const InputsContainer = memo(({ children, submitText, method, csx }) => {
   const errors = useActionData();
@@ -57,7 +58,7 @@ const InputsContainer = memo(({ children, submitText, method, csx }) => {
 export async function loginAction({ request, params }) {
   const method = request.method;
   const data = await request.formData();
-  let url = "https:/localhost:8000/api/v1/Auth/login";
+  let url = "http://localhost:8000/api/v1/Auth/login";
   // let url = "https://dummyjson.com/products/add";
   const loginData = {
     email: data.get("email"),
@@ -72,9 +73,17 @@ export async function loginAction({ request, params }) {
   });
 
   if (res.status === 200) {
-    console.log(JSON.stringify('login respose' + res));
+    console.log("login 200 res " + JSON.stringify(res));
+    localStorage.setItem("loggedIn", true);
+    window.dispatchEvent(new Event('storage'))
+    return redirect("/home");
   }
-  return redirect("/winconfig");
+  else {
+    console.log("login null res " + JSON.stringify(res));
+    localStorage.setItem("loggedIn", true);
+    window.dispatchEvent(new Event('storage'))
+    return redirect("/login");
+  }
 }
 
 //form action register function
@@ -82,7 +91,7 @@ export async function regAction({ request, params }) {
   try {
     const method = request.method;
     const data = await request.formData();
-    let url = "https:/localhost:8000/api/v1/Auth/signup";
+    let url = "http://localhost:8000/api/v1/Auth/signup";
     // let url = "https://dummyjson.com/products/add";
     const regData = {
       first_name: data.get("fname"),

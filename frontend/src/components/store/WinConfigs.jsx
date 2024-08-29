@@ -27,14 +27,12 @@ const windowsSlice = createSlice({
             state[index][keyOfSelectedOption] = option;
         },
         addRadioConfig(state, action) {
-            console.log(action.payload);
-            console.log("helooooo")
             const { configName, selectedOption } = action.payload;
-            state[8][configName] = selectedOption;
+            state[configName] = selectedOption;
         },
         addInputData(state, action) {
             const { keyName, val } = action.payload;
-            state[9][keyName] = val;
+            state[13][keyName] = val;
         },
     },
 });

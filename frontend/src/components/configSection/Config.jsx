@@ -25,6 +25,7 @@ const Config = () => {
         for (let opt of slectedOptions) {
             if (Object.values(opt).includes(null)) {
                 const fieldId = Object.keys(opt)[0].replace(" ", "_");
+                console.log(slectedOptions)
                 navigate(`#${fieldId}`);
                 setShowDialog(true);
                 return;

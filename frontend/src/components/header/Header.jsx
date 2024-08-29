@@ -5,7 +5,17 @@ import classes from "./Header.module.css";
 import logo from "../assets/images/logowindow.png";
 import Tabs from "./Tabs";
 import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
 export default function Header() {
+   const [loggedIn, userLoggedIn] = useState(localStorage.getItem("loggedIn"));
+    useEffect(() => {
+        const handleStorage = () => {
+             const updatedState = localStorage.getItem("loggedIn");
+userLoggedIn(updatedState);        }
+      
+        window.addEventListener('storage', handleStorage())
+        return () => window.removeEventListener('storage', handleStorage())
+      }, [])
     return (
         <header>
             <Container
@@ -24,14 +34,16 @@ export default function Header() {
                         />
                     </NavLink>
                 </div>
-                <div className={classes.login}>
+               {loggedIn && <div className={classes.login}>
                     <NavLink to="/login">
                         <PersonIcon />
                     </NavLink>
                     <NavLink to="/cart">
                         <ShoppingCartIcon />
                     </NavLink>
-                </div>
+                </div>}
+                {!loggedIn && <NavLink to="/login">
+                        Log in/ Register </NavLink> }
             </Container>
             {/* <Tabs /> */}
         </header>
