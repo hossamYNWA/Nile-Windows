@@ -6,7 +6,7 @@ const cartSlice = createSlice({
     reducers: {
         addToCart(state, action) {
             state.items.push({ ...action.payload, uprice: 20,user_id:"101" });
-            console.log(action.payload);
+             console.log(action.payload);
         },
         changeQty(state, action) {
             const { process, id } = action.payload;
@@ -25,6 +25,16 @@ const cartSlice = createSlice({
                 }
             });
         },
+        updateTotalPrice(state, action) {
+            console.log('total new price: listening');
+            
+            const { price, qty } = action.payload;
+            console.log('price is ' + price);
+            
+            state.totalPrice = price*qty;
+            console.log('new total price: ' + state.totalPrice);
+        }
+
     },
 });
 

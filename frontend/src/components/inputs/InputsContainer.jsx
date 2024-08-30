@@ -3,7 +3,6 @@ import Button from "@mui/material/Button";
 import { Form, redirect, useActionData, json } from "react-router-dom";
 import CustomToast from "./CustomToast";
 import errorFinder from "../Validator.js";
-import { useDispatch } from "react-redux";
 import { memo } from "react";
 const InputsContainer = memo(({ children, submitText, method, csx }) => {
   const errors = useActionData();
@@ -75,13 +74,10 @@ export async function loginAction({ request, params }) {
   if (res.status === 200) {
     console.log("login 200 res " + JSON.stringify(res));
     localStorage.setItem("loggedIn", true);
-    window.dispatchEvent(new Event('storage'))
-    return redirect("/home");
+    window.dispatchEvent( new Event('storage') )
+    return redirect("/");
   }
   else {
-    console.log("login null res " + JSON.stringify(res));
-    localStorage.setItem("loggedIn", true);
-    window.dispatchEvent(new Event('storage'))
     return redirect("/login");
   }
 }

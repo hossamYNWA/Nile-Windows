@@ -154,9 +154,6 @@ const Register = memo(() => {
           options={cities ? cities : [{ name: "cities" }]}
           disabled={selectedState !== "" ? false : true}
         />
-        {/* <CustomInput name="country" label="Country" type="text" required />
-        <CustomInput name="city" label="City" type="text" required />
-        <CustomInput name="state" label="State" type="text" required /> */}
         <CustomInput name="area" label="Area" type="text" />
         <CustomInput name="street" label="Street" type="text" />
         <div style={{visibilty:"hidden"}}></div>

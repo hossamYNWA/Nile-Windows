@@ -1,24 +1,33 @@
 .descList {
-    list-style-type: disclosure-closed;
-      padding: 10px 25px;
-      list-style-position: inside;
-    color: var(--primary-color);
+  list-style-type: disclosure-closed;
+  padding: 10px 25px;
+  list-style-position: inside;
+  color: var(--primary-color);
 }
 
 .descList li {
-    font-size:0.8rem;
-    margin-bottom: 5px;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
 }
 
 .qty {
-    font-size: 22px;
-    display: inline-block;
-    margin: 10px;
+  font-size: 22px;
+  display: inline-block;
+  margin: 10px;
 }
 
 .qtyContainer {
-    display: flex;
-      justify-content: center;
-      align-items: center;
-    color: var(--primary-color)
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color)
+}
+
+.priceInput {
+  width: 50px;
+  height: 25px;
+  padding-left: 7px;
+  outline: 0;
+  border-radius: 3px;
+  border: 1px solid #b3b3b3;
 }

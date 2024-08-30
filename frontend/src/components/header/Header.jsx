@@ -6,16 +6,7 @@ import logo from "../assets/images/logowindow.png";
 import Tabs from "./Tabs";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-export default function Header() {
-   const [loggedIn, userLoggedIn] = useState(localStorage.getItem("loggedIn"));
-    useEffect(() => {
-        const handleStorage = () => {
-             const updatedState = localStorage.getItem("loggedIn");
-userLoggedIn(updatedState);        }
-      
-        window.addEventListener('storage', handleStorage())
-        return () => window.removeEventListener('storage', handleStorage())
-      }, [])
+export default function Header({loggedIn}) {
     return (
         <header>
             <Container
@@ -42,8 +33,8 @@ userLoggedIn(updatedState);        }
                         <ShoppingCartIcon />
                     </NavLink>
                 </div>}
-                {!loggedIn && <NavLink to="/login">
-                        Log in/ Register </NavLink> }
+                {!loggedIn && <NavLink to="/login" style={{textDecoration: 'none', fontWeight:'bold', color:'var(--primary-color)'} }>
+                        Log in </NavLink> }
             </Container>
             {/* <Tabs /> */}
         </header>
