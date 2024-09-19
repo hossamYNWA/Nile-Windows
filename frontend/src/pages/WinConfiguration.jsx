@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 //fetching data function
 async function fetchDataFromUrl(category) {
   try {
-    const response = await fetch(`http://localhost:8000/api/v1/${category}`);
+    const response = await fetch(`http://16.170.125.114/api/v1/${category}`);
     const  data  = await response.json();
 
     if (!response.ok) {
