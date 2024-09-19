@@ -49,7 +49,7 @@ export default function CartContent() {
     //save button handler (send cart data to server)
     const saveHandler = useCallback(() => {
         console.log("cartItems " + JSON.stringify(invoiceItems));
-        const url = "https://glass.junaidlatif.com/api/v1/Invoice/download-pdf";
+        const url = "http://16.170.125.114/api/v1/Invoice/download-pdf";
         sendCartData(url, invoiceItems)
             .then((res) => {
                 console.log(res);
