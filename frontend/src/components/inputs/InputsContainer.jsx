@@ -57,7 +57,7 @@ const InputsContainer = memo(({ children, submitText, method, csx }) => {
 export async function loginAction({ request, params }) {
   const method = request.method;
   const data = await request.formData();
-  let url = "http://localhost:8000/api/v1/Auth/login";
+  let url = "http://16.170.125.114/api/v1/Auth/login";
   // let url = "https://dummyjson.com/products/add";
   const loginData = {
     email: data.get("email"),
@@ -87,7 +87,7 @@ export async function regAction({ request, params }) {
   try {
     const method = request.method;
     const data = await request.formData();
-    let url = "http://localhost:8000/api/v1/Auth/signup";
+    let url = "http://16.170.125.114/api/v1/Auth/signup";
     // let url = "https://dummyjson.com/products/add";
     const regData = {
       first_name: data.get("fname"),
