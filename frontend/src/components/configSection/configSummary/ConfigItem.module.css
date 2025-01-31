@@ -1,0 +1,21 @@
+.configItem {
+    height: 35px;
+      border-bottom: 1px solid whitesmoke;
+      color: whitesmoke;
+      line-height: 35px;
+      padding: 0px 20px;
+}
+
+.configLink {
+    color:var(--primary-color);
+    text-decoration: none;
+}
+
+.configTitle {
+    font-weight:bold;
+    text-transform:capitalize;
+}
+
+.configValue {
+    font-size: 0.9rem;
+}

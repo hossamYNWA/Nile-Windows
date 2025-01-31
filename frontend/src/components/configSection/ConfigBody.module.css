@@ -1,0 +1,9 @@
+.body {
+    padding: 25px 50px;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-bottom:40px;
+}
+

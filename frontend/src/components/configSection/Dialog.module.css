@@ -1,0 +1,31 @@
+.dialog {
+    height: 165px;
+    width: 200px;
+    border: 1px solid #ecb6b6;
+    padding: 20px;
+    text-align: center;
+    height: 120px;
+    width: 300px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.dialog::backdrop {
+    background-color: black;
+    opacity: 0.7;
+}
+
+.dialog button {
+    height: 40px;
+      display: block;
+      border: 0;
+      background-color: #464847;
+      color: whitesmoke;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    height: 35px;
+    width: 120px;
+    margin: 20px auto 0;
+}
